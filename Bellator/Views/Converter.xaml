@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Bellator.Views.Converter" 
+             Title="XP Converter"
+             BackgroundColor="White">
+   <TableView Intent="Settings" x:Name="ConTable">
+    <TableRoot>
+        <TableSection Title="XP to ACP Converter">
+            <SwitchCell Text="Round Up?" 
+                        On="true" 
+                        OnChanged="Handle_RoundUpOnChanged"/>
+            <SwitchCell Text="Slow Progression?" 
+                        On="false"
+                        OnChanged="Handle_SlowProgressionOnChanged"/>
+            <EntryCell 
+                Label="Current XP" 
+                Keyboard="Numeric"
+                x:Name="EntryCurrentXP"
+                Completed="Handle_XPCompleted"
+                />
+        </TableSection>
+        <TableSection Title="Conversion Statistics">
+          <EntryCell 
+                Label="ACP Needed for Levels 1-4 "
+                Text="4 checkpoints"
+                x:Name="textLevels"
+                IsEnabled="false"/> 
+          <EntryCell 
+                Label="ACP Needed for Levels 5+ "
+                Text="8 checkpoints"
+                x:Name="textLevels5"
+                IsEnabled="false"/> 
+          <EntryCell 
+                Label="Total ACP Earned" 
+                Keyboard="Numeric"
+                x:Name="textTotalACP"
+                IsEnabled="false"/>
+           <EntryCell 
+                Label="Current Level" 
+                Keyboard="Numeric"
+                x:Name="textLevel"
+                IsEnabled="false"/>
+             <EntryCell 
+                Label="ACP towards gaining next level" 
+                Keyboard="Numeric"
+                x:Name="textNextLevelACPEarned"
+                IsEnabled="false"/>
+            <EntryCell 
+                Label="Progress towards next level " 
+                Keyboard="Numeric"
+                x:Name="textNextLevelACP"
+                IsEnabled="false"/>
+            
+        </TableSection>
+    </TableRoot>
+</TableView>
+</ContentPage>
